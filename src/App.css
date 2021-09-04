@@ -1,38 +1,253 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://i.ibb.co/KGcdq41/1630531131533.jpg./images/img2.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  color: #fff;
+  font-family: "play", cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav {
+  border-bottom: 1px solid #001f3d;
+  background: #001f3d;
+  height: 16vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav__toggle {
+  display: none;
+}
+
+.nav-items {
+  display: block;
+  height: 80px;
+  margin-top: 0;
+}
+
+.navbar-logo {
+  justify-self: start;
+  margin-left: 30px;
+  cursor: pointer;
+  width: 48px;
+  text-decoration: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-link {
+  font-family: "Righteous", cursive;
+  letter-spacing: 0.1rem;
+  color: #eee;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+svg {
+  width: 1.5rem;
+  fill: #eee;
+}
+
+.nav__checkbox {
+  display: none;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+.navbar-links {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 1rem 1.5rem;
+  margin-top: 0.8rem;
+}
+
+.navbar-links:hover {
+  border-bottom: 4px solid #eee;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: #f3c693;
+}
+
+.home > h1 {
+  margin-top: 12%;
+  font-size: 6rem;
+}
+
+.home > h1,
+.home > p {
+  font-family: "Righteous", cursive;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+input[type="search"] {
+  display: block;
+  padding: 1rem;
+  font-size: 20px;
+  border: 0;
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
+  outline: none;
+  background: #001f3d;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.card {
+  cursor: pointer;
+  background: transparent;
+  height: 370px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  perspective: 1000px;
+}
+
+.card h2 {
+  font-size: 20px;
+  border-bottom: 1px #777 solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background-color: #001f3d;
+  color: #fff;
+  padding: 20px;
+  transform: rotateY(180deg);
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.fa-play-circle {
+  font-size: 4rem;
+  margin: 2.5rem 34%;
+}
+
+.card li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+/* for smaller screens */
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-logo {
+    width: 8vh;
+  }
+  .nav__menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav__toggle {
+    position: absolute;
+    cursor: pointer;
+    margin: 0rem 1rem;
+    right: 0;
+    display: block;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .menu,
+  .close {
+    margin-top: 2rem;
+  }
+
+  .nav-items {
+    list-style-type: none;
+    height: 25%;
+    background: #001f3d;
+    z-index: 10;
+    width: 23.6vw;
+    margin-top: 4rem;
+    margin-bottom: -4rem;
+    padding-bottom: 0.8rem;
+    display: none;
+  }
+
+  .navbar-links {
+    font-size: 14px;
+  }
+
+  #nav__checkbox:checked ~ ul.nav__menu li {
+    display: block;
+  }
+
+  #nav__checkbox:checked ~ label.nav__toggle .close {
+    display: block;
+  }
+
+  #nav__checkbox:checked ~ label.nav__toggle .menu {
+    display: none;
+  }
+
+  .home > h1 {
+    font-size: 3rem;
+    margin-top: 50%;
   }
 }
