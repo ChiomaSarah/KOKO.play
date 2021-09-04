@@ -5,7 +5,12 @@ const Spinner = () => {
   return (
     <img
       src={Loader}
-      style={{ width: "35rem", margin: "auto", display: "block", background: "transparent" }}
+      style={{
+        width: "300px",
+        margin: "auto",
+        display: "block",
+        background: "transparent",
+      }}
       alt="Loading..."
     />
   );

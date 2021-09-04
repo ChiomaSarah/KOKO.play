@@ -171,7 +171,8 @@ input[type="search"] {
 
 .fa-play-circle {
   font-size: 4rem;
-  margin: 2.5rem 34%;
+  color: #f3c693;
+  margin: 2rem 34%;
 }
 
 .card li {
@@ -183,6 +184,10 @@ input[type="search"] {
 @media (max-width: 800px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .card,
+  .card img {
+    height: 420px;
   }
 }
 
@@ -223,7 +228,7 @@ input[type="search"] {
     height: 25%;
     background: #001f3d;
     z-index: 10;
-    width: 23.6vw;
+    width: 40vw;
     margin-top: 4rem;
     margin-bottom: -4rem;
     padding-bottom: 0.8rem;
@@ -249,5 +254,9 @@ input[type="search"] {
   .home > h1 {
     font-size: 3rem;
     margin-top: 50%;
+  }
+  .fa-play-circle {
+    font-size: 3rem;
+    margin-top: 2rem;
   }
 }
