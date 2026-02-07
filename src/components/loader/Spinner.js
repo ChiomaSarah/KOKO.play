@@ -1,4 +1,3 @@
-import React from "react";
 import Loader from "./img/spinner2.gif";
 
 const Spinner = () => {

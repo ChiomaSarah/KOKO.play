@@ -5,7 +5,8 @@
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("https://i.ibb.co/KGcdq41/1630531131533.jpg./images/img2.jpg");
   background-position: center;
   background-size: cover;
@@ -69,12 +70,17 @@ svg {
   height: 100%;
   padding: 1rem 1.5rem;
   margin-top: 0.8rem;
+  transition: all 0.2s ease-out;
 }
 
 .navbar-links:hover {
-  border-bottom: 4px solid #eee;
-  transition: all 0.2s ease-out;
   text-decoration: none;
+  border-bottom: 4px solid #eee;
+  color: #f3c693;
+}
+
+.navbar-links.active {
+  border-bottom: 4px solid #eee;
   color: #f3c693;
 }
 
@@ -96,16 +102,33 @@ svg {
 
 input[type="search"] {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   font-size: 20px;
-  border: 0;
+  border: none;
   border-radius: 30px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   width: 60%;
-  margin: auto;
-  margin-top: 2rem;
+  margin: 2rem auto;
   outline: none;
   background: #001f3d;
+
+  /* inset shadow for pressed look */
+  box-shadow:
+    inset 3px 3px 8px rgba(0, 0, 0, 0.129),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.05);
+
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="search"]::placeholder {
+  color: #bbb;
+  opacity: 1;
+}
+
+input[type="search"]:focus {
+  box-shadow:
+    inset 2px 2px 8px rgba(0, 0, 0, 0.7),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.1);
 }
 
 .cards {

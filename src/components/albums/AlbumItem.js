@@ -1,5 +1,3 @@
-import React from "react";
-
 const Albumitem = ({ item }) => {
   const albumTitle = item["im:name"].label;
   const albumCover = item["im:image"]["2"].label;
@@ -30,8 +28,10 @@ const Albumitem = ({ item }) => {
               <li>
                 <b>Release Date: </b> {releaseDate}
               </li>
-              <li>                
-                <a href={preview} target="_blank" rel="noreferrer"><i className="far fa-play-circle"></i></a>
+              <li>
+                <a href={preview} target="_blank" rel="noreferrer">
+                  <i className="far fa-play-circle"></i>
+                </a>
               </li>
             </ul>
           </div>
@@ -39,8 +39,6 @@ const Albumitem = ({ item }) => {
       </div>
     </>
   );
-
-  
 };
 
 export default Albumitem;

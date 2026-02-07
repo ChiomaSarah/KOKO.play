@@ -1,5 +1,3 @@
-import React from "react";
-
 const Songitem = ({ item }) => {
   const songTitle = item["im:name"].label;
   const albumCover = item["im:image"]["2"].label;
@@ -34,8 +32,10 @@ const Songitem = ({ item }) => {
               <li>
                 <b>Genre: </b> {genre}
               </li>
-              <li>                
-                <a href={preview} target="_blank" rel="noreferrer"><i className="far fa-play-circle"></i></a>
+              <li>
+                <a href={preview} target="_blank" rel="noreferrer">
+                  <i className="far fa-play-circle"></i>
+                </a>
               </li>
             </ul>
           </div>

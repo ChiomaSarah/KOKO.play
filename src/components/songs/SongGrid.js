@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Spinner from "../ui/Spinner";
+import { useState } from "react";
+import Spinner from "../loader/Spinner";
 import SongItem from "./SongItem";
 
 const AlbumGrid = ({ items, isLoading }) => {

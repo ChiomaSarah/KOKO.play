@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import AlbumItem from "./AlbumItem";
-import Spinner from "../ui/Spinner";
+import Spinner from "../loader/Spinner";
 
 const AlbumGrid = ({ items, isLoading }) => {
   const [searchQuery, setSearchQuery] = useState("");

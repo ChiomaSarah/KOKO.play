@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import SongGrid from "./SongGrid";
 
 function SongShowcase() {
@@ -7,9 +7,11 @@ function SongShowcase() {
   let [error, setError] = useState("");
 
   useEffect(() => {
-    async function fetchItems() {
+    async function fetchSongs() {
       try {
-        const response = await fetch("https://itunes.apple.com/us/rss/topsongs/limit=100/json");
+        const response = await fetch(
+          "https://itunes.apple.com/us/rss/topsongs/limit=100/json",
+        );
         const data = await response.json();
         console.log(data);
 
@@ -19,7 +21,7 @@ function SongShowcase() {
         setError(e.message);
       }
     }
-    fetchItems();
+    fetchSongs();
   }, []);
 
   if (setError.message) {
@@ -29,7 +31,10 @@ function SongShowcase() {
   return (
     <>
       <div className="container">
-        <div className="text-warning mb-3 mt-5 text-center" style={{ fontSize: "14px" }}>
+        <div
+          className="text-warning mb-3 mt-5 text-center"
+          style={{ fontSize: "14px" }}
+        >
           {error}
         </div>
         <SongGrid isLoading={isLoading} items={items} />
